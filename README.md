@@ -25,12 +25,11 @@ Without Node, `python3 -m http.server 8080` works too.
 
 ## Deploy to GitHub Pages
 
-`.github/workflows/pages.yml` publishes the site on every push to `main`. One-time setup: in the repo go to
-**Settings → Pages** and set **Source** to **GitHub Actions**. The site ends up at
-`https://<user>.github.io/<repo>/`.
+There's no build step, so Pages serves the repo as is. One-time setup: in the repo go to **Settings → Pages**, set
+**Source** to **Deploy from a branch**, pick `main` and `/ (root)`, and click **Save**. Every push to `main`
+redeploys. The site ends up at `https://<user>.github.io/<repo>/`.
 
-`npm run build` copies `index.html`, `css/` and `js/` into `dist/`, which is what gets deployed. Nothing else from
-the repo is published.
+`.nojekyll` turns off Jekyll processing, so files are served unchanged.
 
 On github.io the flags below don't help visitors, since each person would have to set them in their own browser.
 For Writer, Rewriter and Proofreader, register the github.io origin for each origin trial at
@@ -72,4 +71,4 @@ The **AI call log** at the bottom records how long each call took.
 - `js/ai.js` wrappers around the APIs, one cached instance per model and option set
 - `js/app.js` UI and flows
 - `js/data.js` mock comments
-- `scripts/serve.js` local dev server, `scripts/build.js` copies the site into `dist/`
+- `scripts/serve.js` local dev server

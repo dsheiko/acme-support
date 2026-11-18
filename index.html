@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme Support · Browser AI demo</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>Acme Support</span>
+    </div>
+    <div class="ai-status">
+      <ul class="chips" id="ai-status" aria-label="Built-in AI availability"></ul>
+      <button type="button" class="btn btn-primary" id="prepare" hidden>Download models</button>
+    </div>
+  </header>
+
+  <p class="notice" id="notice" hidden></p>
+
+  <main class="layout">
+    <section class="inbox" aria-labelledby="inbox-title">
+      <div class="inbox-head">
+        <h1 id="inbox-title">Inbox <span class="count" id="count"></span></h1>
+        <div class="inbox-tools">
+          <label class="visually-hidden" for="sort">Sort by</label>
+          <select id="sort">
+            <option value="newest">Newest first</option>
+            <option value="urgency">Most urgent first</option>
+          </select>
+          <button type="button" class="btn" id="analyze">Analyze inbox</button>
+        </div>
+      </div>
+      <ul class="inbox-list" id="inbox-list"></ul>
+    </section>
+
+    <section class="detail" id="detail" aria-live="polite"></section>
+  </main>
+
+  <details class="log">
+    <summary>AI call log <span class="count" id="log-count"></span></summary>
+    <ol id="log"></ol>
+  </details>
+</body>
+</html>

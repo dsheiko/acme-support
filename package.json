@@ -1,0 +1,21 @@
+{
+  "name": "acme-support",
+  "version": "1.0.0",
+  "description": "Mock support inbox running Chrome's built-in AI APIs on the device",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "build": "node scripts/build.js"
+  },
+  "keywords": [
+    "chrome",
+    "built-in-ai",
+    "gemini-nano",
+    "translator-api",
+    "prompt-api"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

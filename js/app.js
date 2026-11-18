@@ -115,7 +115,8 @@ function renderStatus() {
   const isChecked = statuses.length === Object.keys( API_LABELS ).length;
   if ( isChecked && !statuses.some( isUsable ) ) {
     notice.hidden = false;
-    notice.textContent = "None of the built-in AI APIs are usable in this browser. Open the demo in desktop Chrome, see README.md for the flags.";
+    notice.innerHTML = "None of the built-in AI APIs are usable in this browser. Open the demo in desktop Chrome, see "
+      + "<a href=\"https://github.com/dsheiko/acme-support/blob/main/README.md\" target=\"_blank\" rel=\"noopener\">README.md</a> for the flags.";
   } else if ( pending ) {
     notice.hidden = false;
     notice.textContent = "Some models need a one-time download. Click \"Download models\" (browsers only allow it after a click).";

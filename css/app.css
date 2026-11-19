@@ -234,11 +234,32 @@ select:focus,
   background: var(--danger);
 }
 
+.about {
+  margin: 0;
+  padding: 8px 24px;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
 .notice {
   margin: 0;
   padding: 10px 24px;
   background: var(--warn-soft);
   border-bottom: 1px solid var(--border);
+}
+
+.about a,
+.notice a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .about,
+  .notice {
+    padding-inline: 16px;
+  }
 }
 
 /* ---------- Layout ---------- */
